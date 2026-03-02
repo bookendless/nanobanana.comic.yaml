@@ -196,12 +196,78 @@ GitHub PagesはGitHub Actionsを使用している場合、自動デプロイが
    - GitHub Actionsが自動的にビルドとデプロイを実行します
    - リポジトリの「Actions」タブで進行状況を確認できます
 
-## カスタムドメインの設定（オプション）
+## ドメイン（URL）の変更方法
 
-各ホスティングサービスでカスタムドメインを設定できます：
+### Netlifyでドメインを変更する方法
 
-- **Netlify**: Site settings → Domain management
-- **Vercel**: Project settings → Domains
+Netlifyでは、**サイト名の変更**と**カスタムドメインの設定**の2つの方法でURLを変更できます。
+
+#### 方法1: サイト名を変更する（無料・簡単）
+
+デフォルトのランダムなサブドメイン（例：`zippy-piroshki-ce560a.netlify.app`）を、より覚えやすい名前に変更できます。
+
+1. **Netlifyダッシュボードにログイン**
+   - https://app.netlify.com/ にアクセス
+
+2. **サイトを選択**
+   - 変更したいサイトをクリック
+
+3. **サイト設定を開く**
+   - 「Site settings」をクリック
+   - または、サイト名の横にある「⚙️」アイコンをクリック
+
+4. **サイト名を変更**
+   - 「Site details」セクションで「Change site name」をクリック
+   - 新しいサイト名を入力（英数字とハイフンのみ、3〜63文字）
+   - 例：`my-comic-app` → `https://my-comic-app.netlify.app`
+
+5. **保存**
+   - 「Save」をクリック
+   - 新しいURLが即座に有効になります
+
+**注意事項:**
+- サイト名は一意である必要があります（他のユーザーが使用している名前は使用できません）
+- 変更後、古いURLは自動的に新しいURLにリダイレクトされます
+- サイト名は後から変更可能です
+
+#### 方法2: カスタムドメインを設定する（独自ドメインが必要）
+
+独自ドメイン（例：`example.com`）を所有している場合、それをNetlifyサイトに設定できます。
+
+1. **ドメイン管理画面を開く**
+   - Netlifyダッシュボードでサイトを選択
+   - 「Site settings」→「Domain management」をクリック
+
+2. **カスタムドメインを追加**
+   - 「Add custom domain」をクリック
+   - ドメイン名を入力（例：`example.com`、`www.example.com`）
+
+3. **DNS設定を確認**
+   - Netlifyが表示するDNSレコードをコピー
+   - ドメイン提供者（例：お名前.com、ムームードメイン）のDNS設定に追加
+   - 通常、以下のいずれかの方法で設定：
+     - **Aレコード**: NetlifyのIPアドレスを設定
+     - **CNAMEレコード**: Netlifyのドメインを設定
+
+4. **SSL証明書の自動設定**
+   - Netlifyが自動的にSSL証明書（HTTPS）を設定します
+   - 数分〜数時間かかる場合があります
+
+5. **完了**
+   - DNS設定が反映されると、カスタムドメインでアクセス可能になります
+
+**カスタムドメインのメリット:**
+- ✅ ブランドに合ったURL
+- ✅ より覚えやすい
+- ✅ プロフェッショナルな印象
+
+**カスタムドメインのデメリット:**
+- ❌ 独自ドメインの購入費用が必要（年間1,000円〜）
+- ❌ DNS設定の知識が必要
+
+### その他のホスティングサービス
+
+- **Vercel**: Project settings → Domains → Add domain
 - **GitHub Pages**: Repository settings → Pages → Custom domain
 
 ## 注意事項
