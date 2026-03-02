@@ -87,6 +87,16 @@ git push origin main
 ✅ **サーバーにデータが送信されることはありません**  
 ✅ **プライバシーリスクはありません**
 
+### ドメイン（URL）の変更
+
+Netlifyでは、サイト名を変更することでURLを変更できます：
+
+1. Netlifyダッシュボードでサイトを選択
+2. 「Site settings」→「Site details」→「Change site name」
+3. 新しいサイト名を入力（例：`my-comic-app` → `https://my-comic-app.netlify.app`）
+
+独自ドメインを設定することも可能です。詳細は[DEPLOY.md](./DEPLOY.md)の「ドメイン（URL）の変更方法」セクションを参照してください。
+
 ## 技術スタック
 
 - React 19
